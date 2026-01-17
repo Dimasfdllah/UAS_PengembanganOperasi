@@ -13,8 +13,12 @@ spec:
         app: flask-web
     spec:
       containers:
-        - name: flask-web
-          image: flask-web:latest
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 5000
+      - name: flask-web
+        image: dimasfdllah/flask-web:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "500m"
